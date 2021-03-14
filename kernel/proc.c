@@ -696,3 +696,18 @@ procdump(void)
     printf("\n");
   }
 }
+
+// Returns number of processes.
+uint64
+num_proc(void)
+{
+  uint64 num = 0;
+  for (int i = 0; i < NPROC; i++)
+  {
+    if (proc[i].state != UNUSED)
+    {
+      num++;
+    }
+  }
+  return num;
+}
